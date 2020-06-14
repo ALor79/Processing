@@ -21,7 +21,7 @@ class Drop {
 
   void fall() { // function  to determine the speed and shape of the drop 
     y = y + yspeed; // increment y position to give the effect of falling 
-
+    time++;
     if (y > height) { // repositions the drop after it has 'disappeared' from screen
       y = random(-200, -100);
       yspeed = map(z, 0, 20, 2, 5);
@@ -29,21 +29,14 @@ class Drop {
     }
   }
   void show() { // function to render the drop onto the screen
-     
-  
-      if (time==(15)|| firstTime){
-       //w = int(random(0, arr.length));
-       do{
-       String s= a[(int)random(0, a.length)];
-       c=s.charAt((int)random(s.length()));
-       }while(c==' ');
-       time=0;
-       firstTime=false;
-      }else{
-        time++;
-      }
-      fill(0,255,0);
-      
-      text(c, x, y);
+
+
+    if (time==(15)|| firstTime) {
+      c=a[0].charAt(floor(random(50000)));
+      time=0;
+      firstTime=false;
+    }
+    fill(0, 255, 0);
+    text(c, x, y);
   }
 }

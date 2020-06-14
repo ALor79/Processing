@@ -1,11 +1,11 @@
-String[] a ;
+String []a ;
 
-Drop[] drops = new Drop[500]; // array of drop objects
+Drop[] drops = new Drop[300]; // array of drop objects
 
 void setup() {
-  size(1080, 1920); // size of the window
+  size(640, 480); // size of the window
   //create the drops
-  a=  loadStrings("utf8_sequence_0-0x10ffff_assigned_including-unprintable-asis.txt");
+  a=loadStrings("utf8_sequence_0-0x10ffff_assigned_including-unprintable-asis.txt");
   
 for(int i=0;i<drops.length;i++){
     drops[i]=new Drop();
@@ -23,5 +23,5 @@ void draw() {
     drops[i].fall();
     drops[i].show();
   }
- 
+   //saveFrame("Frames/matrix_####.png");
 }
