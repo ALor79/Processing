@@ -24,7 +24,7 @@ class Mover {
   }
   void applyBuoyancy() {
     PVector buoyancy=new PVector(0, -1);
-    buoyancy.mult(ball.volume);
+    buoyancy.mult(volume);
     buoyancy.mult(g);
     buoyancy.mult(Density);
     applyForce(buoyancy);
