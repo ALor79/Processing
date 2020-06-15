@@ -8,8 +8,13 @@ class Mover {
   float radius;
   float volume;
   float density;
-  Mover(float m, float x, float y, float r) {
-    mass = m;
+  color colour;
+  Mover(float m, float x, float y, float r,color c) {
+    int temp=(int)(m*100);
+    println(temp);
+    mass = 1.0*temp/100;
+    
+    colour=c;
     position = new PVector(x, y);
     velocity = new PVector(0, 0);
     acceleration = new PVector(0, 0);
@@ -42,8 +47,13 @@ class Mover {
   void display() {
     stroke(0);
     strokeWeight(2);
-    fill(0, 200);
+    fill(colour, 200);
     ellipse(position.x, position.y, radius*2, radius*2);
+    fill(0);
+    String m=mass+"kg";
+    float mWidth=textWidth(m);
+    float mHeight=textWidth(m.charAt(0));
+    text(m,position.x-mWidth/2,position.y+mHeight/2);
   }
 
   void checkEdges() {
