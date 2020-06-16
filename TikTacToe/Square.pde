@@ -6,17 +6,16 @@ class Square {
     type='E';
     pos=position.copy();
     colour=color(170);
-
   }
 
   void show() {
     fill(colour);
-    rect(origin.x+pos.x,origin.y+ pos.y, scale/3, scale/3);
-
+    rect(origin.x+pos.x, origin.y+ pos.y, scale/3, scale/3);
     if (type!='E') {
       float mWidth=textWidth(type);
       fill(0);
-      textSize(50);
+      float Size=(scale/3);
+      textSize(Size);
       text(type, origin.x+pos.x-mWidth/2+scale/3/2, origin.y+pos.y+mWidth/2+scale/3/2);
     }
   }
