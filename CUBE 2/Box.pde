@@ -1,0 +1,117 @@
+class Cubie{
+  PMatrix3D matrix;
+  int x=0;
+  int y=0;
+  int z=0;
+  color c;
+  Face[] faces = new Face[6];
+  float len;
+  Cubie(PMatrix3D m, int x,int y,int z)
+  {
+  this.matrix= m;
+  this.x=x;
+  this.y=y;
+  this.z=z;
+  c= color(255);
+  faces[0]= new Face(new PVector (0,0,-1),color (0,0,255));
+  faces[1]= new Face(new PVector (0,0,1),color (0,255,0));
+  faces[2]= new Face(new PVector (0,1,0),color (255));
+  faces[3]= new Face(new PVector (0,-1,0),color (255,255,0));
+  faces[4]= new Face(new PVector (1,0,0),color (255,165,0));
+  faces[5]= new Face(new PVector (-1,0,0),color (255,0,0));
+  }
+  void turnFacesZ(){
+     for (Face f : faces ){
+       f.turnZ(HALF_PI);
+     }
+   }
+  void turnFacesY(){
+     for (Face f : faces ){
+       f.turnY(HALF_PI);
+     }
+   }
+  void turnFacesX(){
+     for (Face f : faces ){
+       f.turnX(HALF_PI);
+     }
+   }
+  
+  void update(int x,int y, int z){
+    matrix.reset();
+    matrix.translate(x,y,z);
+
+    this.x=x;
+    this.y=y;
+    this.z=z;
+    
+  
+  }
+  
+  void show()
+  {
+    //fill(c);
+    noFill();
+    stroke(0);
+    strokeWeight(0.1);
+    pushMatrix();//the cubes won't have an effect on eachother 
+    applyMatrix(matrix);
+    box(1);
+    for (Face f : faces){
+      f.show();
+    }
+    popMatrix();
+    
+    
+    
+    
+    //translate (pos.x,pos.y,pos.z);
+    //beginShape(QUADS);
+    //float r = len/2;
+    //Top and bottom
+    
+    //fill(colors[Upp]);
+    //vertex(-r,-r,-r);
+    //vertex(r,-r,-r);
+    //vertex(r,r,-r);
+    //vertex(-r,r,-r);
+    
+    //fill(colors[down]);
+    //vertex(-r,-r,r);
+    //vertex(r,-r,r);
+    //vertex(r,r,r);
+    //vertex(-r,r,r);
+    ////front and back
+    
+    //fill(colors[front]);
+    //vertex(-r,-r,-r);
+    //vertex(r,-r,-r);
+    //vertex(r,-r,r);
+    //vertex(-r,-r,r);
+    
+    //fill(colors[back]);
+    //vertex(-r,r,-r);
+    //vertex(r,r,-r);
+    //vertex(r,r,r);
+    //vertex(-r,r,r);
+    ////right and left
+        
+    //fill(colors[right]);
+    //vertex(-r,-r,-r);
+    //vertex(-r,-r,r);
+    //vertex(-r,r,r);
+    //vertex(-r,r,-r);
+    
+    //fill(colors[left]);
+    //vertex(r,-r,-r);
+    ////vertex(r,-r,r);
+    ////vertex(r,r,r);
+    ////vertex(r,r,-r);
+
+    
+
+    //endShape();
+    
+    
+
+  }
+}

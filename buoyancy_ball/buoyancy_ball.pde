@@ -1,5 +1,5 @@
 Mover[] balls=new Mover[5];
-float Density=1;
+float Density=0.2;
 final float scale=10;
 final float g=(9.8/60/60);
 final float windPower=6;
@@ -8,11 +8,12 @@ void setup()
 {
   frameRate(60);
   size(720, 480);
-  for (int i=0; i<balls.length; i++) {
-    float r=random(25, 50);
-    float m=random(1, 4);
+  for (int i=0; i<balls.length-1; i++) {
+    float r=random(25, 70);
+    float m=random(1, 8);
     balls[i]=new Mover(m, random(width), height-r, r, GenerateColor());
   }
+  balls[balls.length-1]=new Mover(100, random(width), height-25, 25, GenerateColor());
 }
 void draw() 
 {

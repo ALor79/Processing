@@ -2,7 +2,7 @@ class Bob {
   PVector pos;
   PVector velocity;
   PVector acceleration;
-  float mass = 15;
+  float mass = 19;
   
   // Arbitrary damping to simulate friction / drag 
   float damping = 0.995;

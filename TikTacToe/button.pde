@@ -39,4 +39,9 @@ class ResetButton {
     float sHeight=textAscent();
     text(s, pos.x+size.x/2-sWidth/2, pos.y+size.y/2+sHeight/2/2);
   }
+  void restartGame() {
+  turn='X';
+  board=new Board();
+  finished=false;
+}
 }

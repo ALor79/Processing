@@ -33,11 +33,7 @@ void mousePressed() {
     redraw();
   }
 }
-void restartGame() {
-  turn='X';
-  board=new Board();
-  finished=false;
-}
+
 void endOfGame(String gameState) {
   noLoop();
   background(168);

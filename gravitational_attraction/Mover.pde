@@ -33,7 +33,6 @@ class Mover {
     }
 
     if (pos.y > height) {
-      vel.y *= -1;
       pos.y = height;
     }
   }

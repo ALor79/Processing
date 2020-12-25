@@ -11,7 +11,6 @@ class Mover {
   color colour;
   Mover(float m, float x, float y, float r,color c) {
     int temp=(int)(m*100);
-    println(temp);
     mass = 1.0*temp/100;
     
     colour=c;
@@ -47,7 +46,7 @@ class Mover {
   void display() {
     stroke(0);
     strokeWeight(2);
-    fill(colour, 200);
+    fill(colour);
     ellipse(position.x, position.y, radius*2, radius*2);
     fill(0);
     String m=mass+"kg";

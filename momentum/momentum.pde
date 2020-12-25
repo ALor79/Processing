@@ -4,7 +4,7 @@ Orb o2;
 int frames=0;
 void setup() {
   size(1000,800);
-  o1 = new Orb(41, height-41, 8, 7, 10,40);
+  o1 = new Orb(50, height-41, 8, 7, 20,40);
   o2 = new Orb(width-41, height-41, 6, -10, -7,30);
 }
 void draw(){
